@@ -47,4 +47,15 @@ is_leap_year(1946)
 #numbers. The return should be boolean Type.
 def is_consecutive(a_list):
 	"""Determine whether a given list is consecutive or not consecutive."""
-
+	pointer = 0
+	starter = a_list[0]
+	for number in a_list:
+		if number == starter + pointer:
+			pointer+=1
+		else:
+			return False
+	return True
+# if the list is consecutive but out of order
+print(is_consecutive(sorted([1,2,3,5,4])))
+# if the list is consecutive but out of order and we dont sort
+print(is_consecutive([1,2,3,5,4]))
